@@ -191,6 +191,7 @@ public class OverloadTab : ITab
     private void DrawSettingsSliders()
     {
         GUILayout.Label($"Strength : {_rawStrength}", _sliderSubtitle);
+
         GUILayout.Space(1);
 
         GUILayout.BeginHorizontal();
@@ -204,13 +205,16 @@ public class OverloadTab : ITab
         }
 
         GUILayout.Space(5);
-        bool isPressedMaxStrength = GUILayout.Button($"{_maxStrength}", GUILayout.Width(51f));
+
+        string maxStrengthStr = _maxStrength % 1000 == 0 ? $"{_maxStrength / 1000}K" : $"{_maxStrength}";
+        bool isPressedMaxStrength = GUILayout.Button(maxStrengthStr, GUILayout.Width(51f));
 
         GUILayout.EndHorizontal();
 
         GUILayout.Space(10);
 
         GUILayout.Label($"Cooldown : {_rawCooldown:F2}", _sliderSubtitle);
+
         GUILayout.Space(1);
 
         GUILayout.BeginHorizontal();
@@ -224,6 +228,7 @@ public class OverloadTab : ITab
         }
 
         GUILayout.Space(5);
+
         bool isPressedMaxCooldown = GUILayout.Button($"{_maxCooldown:F0}", GUILayout.Width(51f));
 
         GUILayout.EndHorizontal();
