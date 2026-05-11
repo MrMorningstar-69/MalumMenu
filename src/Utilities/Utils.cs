@@ -323,7 +323,7 @@ public static class Utils
 
                 messageWriter.Write((ushort)0);
 
-		        messageWriter.Write((ushort)0);
+                messageWriter.Write((ushort)0);
 
                 messageWriter.EndMessage();
             }
